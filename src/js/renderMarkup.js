@@ -12,8 +12,8 @@ export default function renderMarkup(imgArray = []) {
             } = imgEl;
 
           return `<div class="photo-card">
-            <a href="${largeImageURL}>
-  <img class="preview-image"  src="${webformatURL}" alt="${tags}" loading="lazy" /> </a>
+            <a href="${largeImageURL}">
+      <img class="preview-image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
   <div class="info">
     <p class="info-item">
       <b>Likes: </b>${likes}
