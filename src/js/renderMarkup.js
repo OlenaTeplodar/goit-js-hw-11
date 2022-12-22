@@ -2,8 +2,8 @@ export default function renderMarkup(imgArray = []) {
     const markup = imgArray
         .map(imgEl => {
             const {
-                webformatUrl,
-                largeImageUrl,
+                webformatURL,
+                largeImageURL,
                 tags,
                 likes,
                 views,
@@ -11,20 +11,21 @@ export default function renderMarkup(imgArray = []) {
                 downloads,
             } = imgEl;
 
-            return `<div class="photo-card">
-  <img src="" alt="" loading="lazy" />
+          return `<div class="photo-card">
+            <a href="${largeImageURL}>
+  <img class="preview-image"  src="${webformatURL}" alt="${tags}" loading="lazy" /> </a>
   <div class="info">
     <p class="info-item">
-      <b>Likes</b>
+      <b>Likes: </b>${likes}
     </p>
     <p class="info-item">
-      <b>Views</b>
+      <b>Views: </b>${views}
     </p>
     <p class="info-item">
-      <b>Comments</b>
+      <b>Comments: </b>${comments}
     </p>
     <p class="info-item">
-      <b>Downloads</b>
+      <b>Downloads: </b>${downloads}
     </p>
   </div>
 </div>`;

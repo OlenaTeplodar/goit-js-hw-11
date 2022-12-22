@@ -6,7 +6,7 @@ Notiflix.Notify.init({
     timeout: 2000,
 });
 
-export default async function getAPI({
+export default async function getApi({
     url,
     key,
     q,
@@ -17,11 +17,11 @@ export default async function getAPI({
     page,
 }) {
     try {
-        const responsce = await axios.get(
+        const responce = await axios.get(
             url + '?key=' + key + '&q=' + encodeURIComponent(q) + '&image_type=' + imageType + '&orientation=' + orientation + '&safesearch=' + safesearch + '&per_page=' + perPage + '&page=' + page
         );
 
-        return responsce.data;
+        return responce.data;
     } catch (error) {
         Notiflix.Notify.failure(error.message);
     }

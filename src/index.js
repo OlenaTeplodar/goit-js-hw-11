@@ -1,16 +1,16 @@
-import getAPI from "./js/fetchAPI";
+import getApi from "./js/fetchAPI";
 import renderMarkup from "./js/renderMarkup";
 import { searchQuery } from "./js/dataSearchQuery";
 
 import Notiflix from "notiflix";
 import 'notiflix/dist/notiflix-3.2.5.min.css';
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import { error } from "jquery";
-import { entries } from "lodash";
+// import { error } from "jquery";
+// import { entries } from "lodash";
 
 const lightbox = new SimpleLightbox('.gallery a', {
-    captionData: 'alt',
+    captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
 });
@@ -29,12 +29,12 @@ const refs = {
 refs.formEl.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(event) {
-    if (!refs.formEl.nextElementSibling.searchQuery.value) {
+    if (!refs.formEl.ements.searchQuery.value) {
         return;
     }
     event.preventDefault();
     clearMarkup();
-    pushTextRequest(refs.formEl.searchQuery.value);
+    pushTextRequest(refs.formEl.elements.searchQuery.value);
     loadContent();
 }
 
@@ -65,7 +65,7 @@ async function loadContent() {
     }
 
     if (totalPage >= searchQuery.page) {
-        await getAPI(searchQuery).then(data => {
+        await getApi(searchQuery).then(data => {
             if (data.totalHits <= 0) {
                 Notiflix.Notify.failure(
                     `Sorry, there are no images matching your search query. Please try again.`
@@ -94,7 +94,7 @@ async function loadContent() {
                     lightbox.refresh();
                     interactiveBox();
 
-                    ResizeObserver.observe(document.querySelector('.photo-card'));
+                    observer.observe(document.querySelector('.photo-card'));
                 })
                 .catch(error => {
                     console.log(error);
