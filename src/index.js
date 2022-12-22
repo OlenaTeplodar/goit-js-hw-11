@@ -1,13 +1,13 @@
-import getApi from "./js/fetchAPI";
-import renderMarkup from "./js/renderMarkup";
-import { searchQuery } from "./js/dataSearchQuery";
+import getApi from './js/fetchAPI';
+import renderMarkup from './js/renderMarkup';
+import { searchQuery } from './js/dataSearchQuery';
 
 import Notiflix from "notiflix";
 import 'notiflix/dist/notiflix-3.2.5.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-// import { error } from "jquery";
-// import { entries } from "lodash";
+import { error } from "jquery";
+import { entries } from "lodash";
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
@@ -22,14 +22,14 @@ Notiflix.Notify.init({
 let totalPage = 1;
 
 const refs = {
-    formEl: document.querySelector('.search-form'),
-    galleryEl: document.querySelector('.gallery'),
+  formEl: document.querySelector('.search-form'),
+  galleryEl: document.querySelector('.gallery'),
 };
 
 refs.formEl.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(event) {
-    if (!refs.formEl.ements.searchQuery.value) {
+    if (!refs.formEl.elements.searchQuery.value) {
         return;
     }
     event.preventDefault();
@@ -92,7 +92,7 @@ async function loadContent() {
                 })
                 .then(value => {
                     lightbox.refresh();
-                    interactiveBox();
+                    intreactiveLiteBox();
 
                     observer.observe(document.querySelector('.photo-card'));
                 })
