@@ -48,3 +48,9 @@ ul {
 li {
   list-style-type: none;
 }
+
+.load-more {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

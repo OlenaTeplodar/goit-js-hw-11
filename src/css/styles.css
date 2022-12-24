@@ -25,3 +25,9 @@ li {
 ul {
   list-style: none;
 }
+
+.load-more {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

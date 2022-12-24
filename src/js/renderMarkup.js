@@ -30,6 +30,7 @@ export default function renderMarkup(imgArray = []) {
   </div>
 </div>`;
         })
-        .join('');
-    return markup;
+    .join('');
+   return markup;
+
 }
