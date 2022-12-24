@@ -1,14 +1,13 @@
 import UrlSearchParams from './js/fetchAPI';
 import renderMarkup from './js/renderMarkup';
 import LoadMoreBTN from './js/load-more-btn';
-// import { searchQuery } from './js/dataSearchQuery';
+
 
 import Notiflix from "notiflix";
 import 'notiflix/dist/notiflix-3.2.5.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import { error } from "jquery";
-import { entries } from "lodash";
+
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
